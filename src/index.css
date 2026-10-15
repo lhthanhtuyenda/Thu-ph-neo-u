@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-mono-num {
+    /* Đảm bảo toàn bộ số sử dụng CÙNG FONT CHỮ với văn bản */
+    font-family: inherit !important;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Toàn bộ bảng in và chữ/số trong biên bản luôn đồng nhất 100% font chữ */
+#printable-report,
+#printable-report *,
+#printable-report table,
+#printable-report td,
+#printable-report th,
+#printable-report span,
+#printable-report div {
+  font-family: 'Times New Roman', 'Tinos', Times, serif !important;
+}
+
+/* ========================================================
+   CẤU HÌNH IN ẤN CHUẨN XÁC: IN NHIỆT & IN BIÊN BẢN A5 NGANG
+======================================================== */
+@media print {
+  /* 1. Mặc định ẩn tất cả mọi thứ trên trang web */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* 2. Trường hợp in hóa đơn nhiệt sà lan */
+  body.printing-receipt #printable-receipt,
+  body.printing-receipt #printable-receipt * {
+    visibility: visible !important;
+  }
+
+  body.printing-receipt #printable-receipt {
+    display: block !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 80mm !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    background: white !important;
+    color: black !important;
+    font-size: 12px !important;
+  }
+
+  /* 3. Trường hợp IN BIÊN BẢN (KHỔ A5 NGANG 210mm x 148mm) - CHỈ DUY NHẤT 1 BẢN */
+  body.printing-report,
+  body.printing-report *,
+  body.printing-report #printable-report,
+  body.printing-report #printable-report * {
+    visibility: visible !important;
+  }
+
+  body.printing-report #printable-report {
+    display: block !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 2mm 4mm !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Định dạng máy in: Khổ A5 ngang (210mm x 148mm) */
+@page {
+  size: A5 landscape;
+  margin: 4mm 6mm;
+}
+

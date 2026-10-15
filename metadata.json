@@ -1,0 +1,8 @@
+{
+  "name": "Hệ Thống Thu Phí Neo Đậu Sà Lan - Cảng Thạnh Phước (Biconsi Group)",
+  "description": "Hệ thống quản lý và thu phí neo đậu sà lan cảng Thạnh Phước - Biconsi Group, hỗ trợ lập biên lai, tính phí tự động, mã VietQR, in nhiệt và báo cáo thống kê.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

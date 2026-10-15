@@ -1,0 +1,17 @@
+{
+  "name": "Cảng Thạnh Phước - Thu Phí Sà Lan",
+  "short_name": "Thu Phí Sà Lan",
+  "description": "Hệ thống quản lý và thu phí neo đậu sà lan Cảng Thạnh Phước - Biconsi Group",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><path d='M50 20 a8 8 0 1 0 0.001 0 M50 28 v44 M30 52 c0 15 40 15 40 0 M22 45 h16 M62 45 h16' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "entities": {
+    "Receipt": {
+      "title": "Receipt",
+      "description": "Barge mooring fee receipt record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "collectedDate": { "type": "string" },
+        "time": { "type": "string" },
+        "vehiclePlate": { "type": "string" },
+        "ownerCaptain": { "type": "string" },
+        "dwt": { "type": "number" },
+        "cargoType": { "type": "string" },
+        "collectorName": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "paymentStatus": { "type": "string" },
+        "submitted": { "type": "boolean" },
+        "submittedAt": { "type": "string" },
+        "berthStatus": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "vehiclePlate", "date", "totalAmount"]
+    },
+    "PortConfig": {
+      "title": "PortConfig",
+      "description": "Port and company configuration settings",
+      "type": "object",
+      "properties": {
+        "portName": { "type": "string" },
+        "companyName": { "type": "string" },
+        "subTitle": { "type": "string" },
+        "address": { "type": "string" },
+        "phone": { "type": "string" },
+        "fax": { "type": "string" },
+        "hotline": { "type": "string" },
+        "taxCode": { "type": "string" }
+      },
+      "required": ["portName", "companyName"]
+    },
+    "Staff": {
+      "title": "Staff",
+      "description": "Staff member profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "shift": { "type": "string" },
+        "role": { "type": "string" },
+        "active": { "type": "boolean" },
+        "password": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "UserAccount": {
+      "title": "UserAccount",
+      "description": "User login credentials for cross-device authentication",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "password": { "type": "string" },
+        "fullName": { "type": "string" },
+        "role": { "type": "string" },
+        "staffId": { "type": "string" },
+        "active": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "username", "password", "fullName"]
+    }
+  },
+  "firestore": {
+    "/receipts/{receiptId}": {
+      "schema": "Receipt",
+      "description": "All port barge receipts and mooring fee records"
+    },
+    "/settings/{settingId}": {
+      "schema": "PortConfig",
+      "description": "Port configuration and company information"
+    },
+    "/staff/{staffId}": {
+      "schema": "Staff",
+      "description": "Staff members operating at the port"
+    },
+    "/accounts/{accountId}": {
+      "schema": "UserAccount",
+      "description": "User accounts and credentials for multi-device login"
+    }
+  }
+}
